@@ -18,14 +18,14 @@ type CORSConfig struct {
 
 // DefaultCORSConfig returns default CORS configuration
 func DefaultCORSConfig() CORSConfig {
-	return CORSConfig{
-		AllowedOrigins:   []string{"*"},
-		AllowedMethods:   []string{"GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"},
-		AllowedHeaders:   []string{"Origin", "Content-Type", "Accept", "Authorization", "X-Request-ID"},
-		ExposedHeaders:   []string{"X-Request-ID"},
-		AllowCredentials: true,
-		MaxAge:           86400,
-	}
+    return CORSConfig{
+        AllowedOrigins:   []string{"*"},
+        AllowedMethods:   []string{"GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"},
+        AllowedHeaders:   []string{"Origin", "Content-Type", "Accept", "Authorization", "X-Request-ID", "X-Workspace-Id"},  // X-Workspace-Id 추가
+        ExposedHeaders:   []string{"X-Request-ID"},
+        AllowCredentials: true,
+        MaxAge:           86400,
+    }
 }
 
 // CORS returns a middleware that handles CORS
