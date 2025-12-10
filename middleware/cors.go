@@ -65,6 +65,11 @@ func CORS(config CORSConfig) gin.HandlerFunc {
 	}
 }
 
+// DefaultCORS returns CORS middleware with default configuration
+func DefaultCORS() gin.HandlerFunc {
+	return CORS(DefaultCORSConfig())
+}
+
 // CORSWithOrigins returns CORS middleware with specified allowed origins
 func CORSWithOrigins(origins string) gin.HandlerFunc {
 	config := DefaultCORSConfig()
